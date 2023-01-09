@@ -2,6 +2,16 @@
   margin: 1rem 2rem;
 }
 
+.logo{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  color:#fff;
+  text-transform: uppercase;
+}
+.logo span{
+  color:var(--orange);
+}
+
 .carousel-wrapper{
   margin: 10px 3%;
 }
@@ -164,6 +174,7 @@
   border: none;
   margin-right: 1rem;
   background-color: transparent;
+  color: #48cae4;
 }
 
 .footer h6{
