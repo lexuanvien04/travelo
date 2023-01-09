@@ -1,6 +1,5 @@
 import React from 'react'
 import './Home.css';
-import 'bootstrap/dist/css/bootstrap.min.css';  
 import PublicIcon from '@mui/icons-material/Public';    
 import PaidIcon from '@mui/icons-material/Paid';
 import PlaceIcon from '@mui/icons-material/Place';

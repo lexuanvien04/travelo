@@ -2,7 +2,6 @@ import React from "react";
 import Carousel from "react-elastic-carousel";
 import styled from "styled-components";
 import './Home.css'
-import 'bootstrap/dist/css/bootstrap.min.css';  
 import Rating from '@mui/material/Rating'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
