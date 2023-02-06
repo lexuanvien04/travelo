@@ -1,0 +1,81 @@
+.address{
+    float: left;
+}
+
+.location .favorite{
+    text-align: right;
+    margin-right: 2rem;
+}
+
+.detail .title{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+.grid .line{
+    border-width: 0 1px 0 0;
+    border-style: dashed;
+    text-align: center;
+}
+
+.gallery{
+    margin-top: 20px;
+    margin-right: 20px;
+    padding-bottom: -1em;
+}
+
+.tabs{
+    margin-top: 20px;
+}
+
+.tabs p {
+    font-size: 16px;
+    font-style: oblique;
+    text-align: justify;
+    line-height: 30px;
+}
+
+.tabs input,
+#content1, #content2, #content3, #content4{
+    clear: both;
+    padding-top: 10px;
+    display: none;
+}
+
+.tabs label {
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+    float: left;
+    padding: 10px 50px;
+    border-top: 2px solid transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-bottom: 1px solid #48cae4;
+}
+
+.tabs h3{
+    color: #48cae4;
+}
+
+.tabs label:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#tab1:checked~#content1,
+#tab2:checked~#content2,
+#tab3:checked~#content3,
+#tab4:checked~#content4 {
+    display: block;
+}
+
+.tabs input:checked+label {
+    border-top-color: #48cae4;
+    border-right-color: #48cae4;
+    border-left-color: #48cae4;
+    border-bottom-color: transparent;
+    text-decoration: none;
+}

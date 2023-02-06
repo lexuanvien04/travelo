@@ -1,0 +1,30 @@
+.tour{
+    margin: 1rem 2rem;
+}
+
+.list-tour{
+    margin: 4rem 1rem;
+}
+
+.side-bar{
+    border-right: 1px solid #000;
+    margin-right: 2rem;
+}
+
+.side-bar hr{
+    margin-right: 10%;
+}
+
+.filter .title{
+    font-weight: bold;
+    color: #48cae4;
+}
+
+
+.list-item .pager{
+    
+}
+
+.list-item p{
+    margin-left: 20px;
+}
