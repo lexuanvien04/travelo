@@ -1,6 +1,7 @@
 .book-tour{
     border: 1px dotted;
     padding: 20px 20px;
+    background-color: #fff;
 }
 .book-tour h5{
     color: #48cae4;
@@ -19,21 +20,19 @@
 }
 
 .button button{
+    width: 100%;
     padding: 15px 40px;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
-}
-
-.button .btn-contact{
-    border: 1px solid #48cae4;
-    background-color: transparent;
-    color: #48cae4;
-    margin-right: 30px;
 }
 
 .button .btn-request{
     border: 1px solid #48cae4;
     background-color: #48cae4;
     color: #fff;
+}
+
+.book-tour .service{
+    margin: 2rem 1rem;
 }

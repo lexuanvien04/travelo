@@ -12,6 +12,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import BookForm from "./BookForm";
 
 export default function Detail() {
   return (
@@ -29,32 +30,32 @@ export default function Detail() {
       <Box className="box-grid">
         <Grid container spacing={0.5} className="grid ">
           <Grid item xs={1} className="line">
-            <label>From</label>
+            <label><i>From</i></label>
             <br />
             <span>$230</span>
           </Grid>
           <Grid item xs={1.5} className="line">
-            <label>From</label>
+            <label><i>From</i></label>
             <br />
             <span>6 day</span>
           </Grid>
           <Grid item xs={1.5} className="line">
-            <label>Max People</label>
+            <label><i>Max people</i></label>
             <br />
             <span>100</span>
           </Grid>
           <Grid item xs={1.5} className="line">
-            <label>Min Age</label>
+            <label><i>min Age</i></label>
             <br />
             <span>10+</span>
           </Grid>
           <Grid item xs={3.5} className="line">
-            <label>Tour Type</label>
+            <label><i>Your type</i></label>
             <br />
             <span>Honeymoon , Museum Tours</span>
           </Grid>
           <Grid item xs={2.5} className="text-center">
-            <label>Reviews</label>
+            <label><i>Reviews</i></label>
             <br />
             <span>
               <Stack spacing={1}>
@@ -312,6 +313,9 @@ export default function Detail() {
             at orci. Vestibulum laoreet id nulla sit amet mattis.
           </p>
         </div>
+      </div>
+      <div id="form">
+        <BookForm />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+
 .address{
     float: left;
 }
@@ -78,4 +79,29 @@
     border-left-color: #48cae4;
     border-bottom-color: transparent;
     text-decoration: none;
+}
+
+.book-form .box h4{
+    color: #48cae4;
+}
+
+.book-form .box p{
+    margin-top: 20px;
+}
+
+.book-form .box button{
+    background-color: #fff;
+    color: #48cae4;
+    border: 1px solid #48cae4;
+    padding: 1rem 2rem;
+    width: 50%;
+    margin: 2rem 25%;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.book-form .box button:hover{
+    background-color: #48cae4;
+    border: #48cae4;
+    color: #fff;
 }

@@ -4,6 +4,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import logo from "../../assets/logo.png";
+import Link from '@mui/material/Link';
 
 export default function Footer() {
   return (
@@ -99,15 +100,21 @@ export default function Footer() {
                   01 234 567 89
                 </p>
                 <div className="network">
-                  <button type="button">
-                    <FacebookIcon />
-                  </button>
-                  <button type="button">
-                    <InstagramIcon />
-                  </button>
-                  <button type="button">
-                    <TwitterIcon />
-                  </button>
+                  <Link href='https://www.facebook.com/vienhelios03/'>
+                    <button type="button">
+                      <FacebookIcon />
+                    </button>
+                  </Link>
+                  <Link href='https://www.instagram.com/vien.helios/'>
+                    <button type="button">
+                      <InstagramIcon />
+                    </button>
+                  </Link>
+                  <Link href='#'>
+                    <button type="button">
+                      <TwitterIcon />
+                    </button>
+                  </Link>
                 </div>
               </MDBCol>
             </MDBRow>

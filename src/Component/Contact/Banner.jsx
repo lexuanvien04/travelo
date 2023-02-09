@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import homeImage from "../../assets/hero.png";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
@@ -29,11 +28,8 @@ export default function Banner() {
       href="/material-ui/getting-started/installation/"
       onClick={handleClick}
     >
-      <b>TOUR LIST</b>
+      <b>CONTACT</b>
     </Link>,
-    <Typography key="3" color="#fff">
-      TOUR DETAIL
-    </Typography>,
   ];
 
   return (
@@ -43,11 +39,11 @@ export default function Banner() {
       </div>
       <div className="content">
         <div className="title">
-          <h1>TOUR DETAIL</h1>
+          <h1>CONTACT</h1>
           <div className="stack">
             <Stack spacing={2}>
               <Breadcrumbs
-                separator={<NavigateNextIcon fontSize="small"  sx={{color: "white"}} />}
+                separator={<NavigateNextIcon fontSize="small" sx={{color: "white"}}  />}
                 aria-label="breadcrumb"
               >
                 {breadcrumbs}
