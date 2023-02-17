@@ -1,11 +1,12 @@
-import React from "react";
+import React, {useState, useEffect}  from "react";
 import Carousel from "react-elastic-carousel";
 import styled from "styled-components";
 import './Home.css';
 import Rating from '@mui/material/Rating'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-
+import Link from '@mui/material/Link';
+import axios from "axios";
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
@@ -15,6 +16,18 @@ const breakPoints = [
 ];
 
 export default function PopularTour() {
+    const [isClick, setClick] = useState(false);
+    const [items, setItem] = useState([]);
+    
+    useEffect(()=>{
+        axios.get('http://localhost:3333/tour')
+        .then(json =>{
+            console.log(json.data)
+          let t = json.data;
+          setItem(t);
+          
+        })
+    },[]);
   return (
     <div className="populartour">
         <div className="carousel-wrapper">
@@ -33,190 +46,41 @@ export default function PopularTour() {
             <span>R</span>
         </h1>
         <Carousel breakPoints={breakPoints} autoPlaySpeed={3600}>
-            <Item>
-            <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                <h3>
-                    <LocationOnIcon sx={{color: "#48cae4"}} fontSize="15px"/> Đà Nẵng
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                </p>
-                <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{color: "#48cae4"}}
-                />
-                <div className="price">
-                    $90.00 <span>$120.00</span>
-                </div>
-                <div className="btn-button">
-                    <button type="button" class="btnBook">
-                    Book now
-                    </button>
-                    <button className="btnFavorite">
-                    <FavoriteBorderIcon />
-                    </button>
-                </div>
-                </div>
+        {items.map((item, index) => (
+          <Item>
+          <div className="box">
+            <img src={item.image} alt="" />
+            <div class="content">
+              <h3>
+                <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
+                {item.name}
+              </h3>
+              
+              <p>
+                {item.description}
+              </p>
+              <Rating
+                name="custom-no-value"
+                value={item.rating}
+                sx={{ color: "#48cae4" }}
+              />
+              <div className="price">
+                {item.discount} <span>{item.price}</span>
+              </div>
+              <div className="btn-button">
+                <button type="button" class="btnBook">
+                <Link href={"/tour-detail/"+item.id} sx={{textDecoration: "none", color: "#fff"}}>
+                  Book now
+                </Link>
+                </button>
+                <button className="btnFavorite">
+                  <FavoriteBorderIcon />
+                </button>
+              </div>
             </div>
-            </Item>
-            <Item>
-            <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                <h3>
-                    <LocationOnIcon sx={{color: "#48cae4"}} fontSize="15px"/> Đà Nẵng
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                </p>
-                <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{color: "#48cae4"}}
-                />
-                <div className="price">
-                    $90.00 <span>$120.00</span>
-                </div>
-                <div className="btn-button">
-                    <button type="button" class="btnBook">
-                    Book now
-                    </button>
-                    <button className="btnFavorite">
-                    <FavoriteBorderIcon />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </Item>
-
-            <Item>
-            <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                <h3>
-                    <LocationOnIcon sx={{color: "#48cae4"}} fontSize="15px"/> Đà Nẵng
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                </p>
-                <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{color: "#48cae4"}}
-                />
-                <div className="price">
-                    $90.00 <span>$120.00</span>
-                </div>
-                <div className="btn-button">
-                    <button type="button" class="btnBook">
-                    Book now
-                    </button>
-                    <button className="btnFavorite">
-                    <FavoriteBorderIcon />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </Item>
-
-            <Item>
-            <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                <h3>
-                    <LocationOnIcon sx={{color: "#48cae4"}} fontSize="15px"/> Đà Nẵng
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                </p>
-                <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{color: "#48cae4"}}
-                />
-                <div className="price">
-                    $90.00 <span>$120.00</span>
-                </div>
-                <div className="btn-button">
-                    <button type="button" class="btnBook">
-                    Book now
-                    </button>
-                    <button className="btnFavorite">
-                    <FavoriteBorderIcon />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </Item>
-
-            <Item>
-            <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                <h3>
-                    <LocationOnIcon sx={{color: "#48cae4"}} fontSize="15px"/> Đà Nẵng
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                </p>
-                <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{color: "#48cae4"}}
-                />
-                <div className="price">
-                    $90.00 <span>$120.00</span>
-                </div>
-                <div className="btn-button">
-                    <button type="button" class="btnBook">
-                    Book now
-                    </button>
-                    <button className="btnFavorite">
-                    <FavoriteBorderIcon />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </Item>
-
-            <Item>
-            <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                <h3>
-                    <LocationOnIcon sx={{color: "#48cae4"}} fontSize="15px"/> Đà Nẵng
-                </h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                </p>
-                <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{color: "#48cae4"}}
-                />
-                <div className="price">
-                    $90.00 <span>$120.00</span>
-                </div>
-                <div className="btn-button">
-                    <button type="button" class="btnBook">
-                    Book now
-                    </button>
-                    <button className="btnFavorite">
-                    <FavoriteBorderIcon />
-                    </button>
-                </div>
-                </div>
-            </div>
-            </Item>
+          </div>
+        </Item>
+        ))}
         </Carousel>
         </div>
     </div>
@@ -262,11 +126,14 @@ const Item = styled.div`
   }
   .btnBook{
     background-color: #48cae4;
-    color: #fff;
-    border: none;
+    border: 1px solid #48cae4;
     padding: 5px 20px;
-    border-radius: 5%;
-    margin-bottom: 10px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    transition: transform .3s; /* Animation */
+  }
+  .btnBook:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
   .btnFavorite{
     color: #48cae4;
