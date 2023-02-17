@@ -40,20 +40,20 @@ const Navbar = () => {
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
               <MDBNavbarLink active aria-current='page' href='/home'>
-                <span style={{color: "#48cae4"}}>HOME</span>
+                <span style={{color: "#48cae4"}}>TRANG CHỦ</span>
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink href="/tour">Tour</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/contact'>Contact</MDBNavbarLink>
+              <MDBNavbarLink href='/blog'>Yêu thích</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/blog'>Blog</MDBNavbarLink>
+              <MDBNavbarLink href='/contact'>Liên hệ</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>About Us</MDBNavbarLink>
+              <MDBNavbarLink href='#'>Giới thiệu</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
             <Outlet/>

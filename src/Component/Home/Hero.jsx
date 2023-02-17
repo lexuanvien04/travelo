@@ -18,18 +18,18 @@ export default function Hero() {
         </div>
         <div className="search">
           <div className="container">
-            <label htmlFor="">Where you want to go</label>
+            <label htmlFor="">Bạn muốn đi đâu</label>
             <input type="text" placeholder="Search Your location" />
           </div>
           <div className="container">
-            <label htmlFor="">Check-in</label>
-            <input type="date" />
+            <label htmlFor="">Khởi hành từ</label>
+            <input type="text" placeholder="Search Your location" />
           </div>
           <div className="container">
-            <label htmlFor="">Check-out</label>
+            <label htmlFor="">Ngày đi</label>
             <input type="date" />
           </div>
-          <button>SEARCH</button>
+          <button>Tìm</button>
         </div>
       </div>
     </Section>

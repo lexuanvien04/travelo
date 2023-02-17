@@ -33,67 +33,50 @@ export default function Footer() {
                 </p>
               </MDBCol>
 
-              <MDBCol md="2" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Products</h6>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Angular
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    React
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Vue
-                  </a>
-                </p>
-                <p>
-                  <a href="#!" className="text-reset">
-                    Laravel
-                  </a>
-                </p>
-              </MDBCol>
+              
 
               <MDBCol md="3" lg="2" xl="2" className="mx-auto mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Useful links</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Liên kết</h6>
                 <p>
                   <a href="#!" className="text-reset">
-                    Pricing
+                    Trang chủ
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Settings
+                    Tour
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Orders
+                    Yêu thích
                   </a>
                 </p>
                 <p>
                   <a href="#!" className="text-reset">
-                    Help
+                    Liên hệ
+                  </a>
+                </p>
+                <p>
+                  <a href="#!" className="text-reset">
+                    Giới thiệu
                   </a>
                 </p>
               </MDBCol>
 
               <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
+                <h6 className="text-uppercase fw-bold mb-4">Liên hệ</h6>
                 <p>
                   <MDBIcon color="secondary" icon="home" className="me-2" />
-                  New York, NY 10012, US
+                  Lê Xuân Viên
                 </p>
                 <p>
                   <MDBIcon color="secondary" icon="envelope" className="me-3" />
-                  info@example.com
+                  lexuanvien04@gmail.com
                 </p>
                 <p>
                   <MDBIcon color="secondary" icon="phone" className="me-3" /> +
-                  01 234 567 88
+                  0353386306
                 </p>
                 <p>
                   <MDBIcon color="secondary" icon="print" className="me-3" /> +

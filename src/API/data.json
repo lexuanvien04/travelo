@@ -1,0 +1,52 @@
+{
+    "tour": [
+        {
+            "id": 1,
+            "name": "Đà Nẵng",
+            "start": "Hà Nội",
+            "description": "Khám phá thành phố đáng sống nhất Việt Nam",
+            "rating": 4.5,
+            "discount": "2.000.000 đ",
+            "price": "2.500.000 đ",
+            "tour-type": "Trong nước",
+            "max-people": 40,
+            "min-age": "10+",
+            "days": "3 ngày 2 đêm",
+            "image": "https://zourney.webtravel.vn/images/tour_3-1024x650.jpg",
+            "overview": "ádsadsadsanjdsanjnj",
+            "location": "fdf"
+        },
+        {
+            "id": 2,
+            "name": "Sapa",
+            "start": "Đà Nẵng",
+            "description": "Moana - Fansipan - Bản đảo cát ",
+            "rating": 4,
+            "discount": "2.000.000 đ",
+            "price": "2.500.000 đ",
+            "tour-type": "Trong nước",
+            "max-people": 40,
+            "min-age": "10+",
+            "days": "3 ngày 2 đêm",
+            "image": "https://zourney.webtravel.vn/images/tour_3-1024x650.jpg",
+            "overview": "ádsadsadsanjdsanjnj",
+            "location": "fdf"
+        },
+        {
+            "id": 3,
+            "name": "Đà Lạt",
+            "start": "Đà Nẵng",
+            "description": "Hành trình mới mẻ & linh hoạt ",
+            "rating": 4,
+            "discount": "3.000.000 đ",
+            "price": "3.500.000 đ",
+            "tour-type": "Trong nước",
+            "max-people": 40,
+            "min-age": "10+",
+            "days": "3 ngày 2 đêm",
+            "image": "https://zourney.webtravel.vn/images/tour_3-1024x650.jpg",
+            "overview": "ádsadsadsanjdsanjnj",
+            "location": "fdf"
+        }
+    ]
+}

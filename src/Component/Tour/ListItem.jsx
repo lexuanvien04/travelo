@@ -1,227 +1,78 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Tour.css";
 import Rating from "@mui/material/Rating";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import styled from "styled-components";
 import Grid from "@mui/material/Grid"; // Grid version 1
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+import axios from "axios";
+import Link from "@mui/material/Link";
 
 export default function ListItem() {
+  const [items, setItem] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:3333/tour").then((json) => {
+      console.log(json.data);
+      let t = json.data;
+      setItem(t);
+    });
+  }, []);
   return (
     <div className="list-item">
       <p>20 tour</p>
       <div className="item">
         <Grid container spacing={2} sx={{ flexGrow: 1 }}>
-          <Grid xs={4}>
-            <Item>
-              <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                  <h3>
-                    <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
-                    Đà Nẵng
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                  </p>
-                  <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{ color: "#48cae4" }}
-                  />
-                  <div className="price">
-                    $90.00 <span>$120.00</span>
-                  </div>
-                  <div className="btn-button">
-                    <button type="button" class="btnBook">
-                      Book now
-                    </button>
-                    <button className="btnFavorite">
-                      <FavoriteBorderIcon />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Item>
-          </Grid>
-          <Grid xs={4}>
-            <Item>
-              <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                  <h3>
-                    <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
-                    Đà Nẵng
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                  </p>
-                  <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{ color: "#48cae4" }}
-                  />
-                  <div className="price">
-                    $90.00 <span>$120.00</span>
-                  </div>
-                  <div className="btn-button">
-                    <button type="button" class="btnBook">
-                      Book now
-                    </button>
-                    <button className="btnFavorite">
-                      <FavoriteBorderIcon />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Item>
-          </Grid>
-          <Grid xs={4}>
-            <Item>
-              <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                  <h3>
-                    <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
-                    Đà Nẵng
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                  </p>
-                  <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{ color: "#48cae4" }}
-                  />
-                  <div className="price">
-                    $90.00 <span>$120.00</span>
-                  </div>
-                  <div className="btn-button">
-                    <button type="button" class="btnBook">
-                      Book now
-                    </button>
-                    <button className="btnFavorite">
-                      <FavoriteBorderIcon />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Item>
-          </Grid>
+          {items.map((item, index) => (
+            <Grid xs={4}>
+              <Item>
+                <div className="box">
+                  <img src={item.image} alt="" />
+                  <div class="content">
+                    <h3>
+                      <LocationOnIcon
+                        sx={{ color: "#48cae4" }}
+                        fontSize="15px"
+                      />{" "}
+                      {item.name}
+                    </h3>
 
-          <Grid xs={4}>
-            <Item>
-              <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                  <h3>
-                    <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
-                    Đà Nẵng
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                  </p>
-                  <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{ color: "#48cae4" }}
-                  />
-                  <div className="price">
-                    $90.00 <span>$120.00</span>
-                  </div>
-                  <div className="btn-button">
-                    <button type="button" class="btnBook">
-                      Book now
-                    </button>
-                    <button className="btnFavorite">
-                      <FavoriteBorderIcon />
-                    </button>
+                    <p>{item.description}</p>
+                    <Rating
+                      name="custom-no-value"
+                      value={item.rating}
+                      sx={{ color: "#48cae4" }}
+                    />
+                    <div className="price">
+                      {item.discount} <span>{item.price}</span>
+                    </div>
+                    <div className="btn-button">
+                      <button type="button" class="btnBook">
+                        <Link
+                          href={"/tour-detail/" + item.id}
+                          sx={{ textDecoration: "none", color: "#fff" }}
+                        >
+                          Book now
+                        </Link>
+                      </button>
+                      <button className="btnFavorite">
+                        <FavoriteBorderIcon />
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Item>
-          </Grid>
-
-          <Grid xs={4}>
-            <Item>
-              <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                  <h3>
-                    <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
-                    Đà Nẵng
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                  </p>
-                  <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{ color: "#48cae4" }}
-                  />
-                  <div className="price">
-                    $90.00 <span>$120.00</span>
-                  </div>
-                  <div className="btn-button">
-                    <button type="button" class="btnBook">
-                      Book now
-                    </button>
-                    <button className="btnFavorite">
-                      <FavoriteBorderIcon />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Item>
-          </Grid>
-
-          <Grid xs={4}>
-            <Item>
-              <div className="box">
-                <img src="https://picsum.photos/800/600?random=3" alt="" />
-                <div class="content">
-                  <h3>
-                    <LocationOnIcon sx={{ color: "#48cae4" }} fontSize="15px" />{" "}
-                    Đà Nẵng
-                  </h3>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Veritatis, nam!
-                  </p>
-                  <Rating
-                    name="custom-no-value"
-                    value={3}
-                    sx={{ color: "#48cae4" }}
-                  />
-                  <div className="price">
-                    $90.00 <span>$120.00</span>
-                  </div>
-                  <div className="btn-button">
-                    <button type="button" class="btnBook">
-                      Book now
-                    </button>
-                    <button className="btnFavorite">
-                      <FavoriteBorderIcon />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </Item>
-          </Grid>
+              </Item>
+            </Grid>
+          ))}
         </Grid>
       </div>
-        <div className="pager">
-            <Stack spacing={2}>
-                <Pagination count={10} variant="outlined" />
-            </Stack>
-        </div>
+      <div className="pager">
+        <Stack spacing={2}>
+          <Pagination count={10} variant="outlined" />
+        </Stack>
+      </div>
     </div>
   );
 }
@@ -264,11 +115,14 @@ const Item = styled.div`
   }
   .btnBook {
     background-color: #48cae4;
-    color: #fff;
-    border: none;
+    border: 1px solid #48cae4;
     padding: 5px 20px;
-    border-radius: 5%;
-    margin-bottom: 10px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    transition: transform .3s; /* Animation */
+  }
+  .btnBook:hover {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
   .btnFavorite {
     color: #48cae4;
